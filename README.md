@@ -115,3 +115,15 @@ MIT License - See [LICENSE](./LICENSE) for details.
 **Built with care for the Bitcoin ecosystem**
 
 </div>
+
+---
+
+## Project Status
+
+🚀 **Active Development** - This project is under active development and welcomes contributions.
+
+## Getting Involved
+
+- Check out our [Contributing Guidelines](./CONTRIBUTING.md)
+- Join the discussion in [GitHub Issues](../../issues)
+- Follow development updates
