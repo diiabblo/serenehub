@@ -127,3 +127,32 @@ MIT License - See [LICENSE](./LICENSE) for details.
 - Check out our [Contributing Guidelines](./CONTRIBUTING.md)
 - Join the discussion in [GitHub Issues](../../issues)
 - Follow development updates
+
+---
+
+## Roadmap & Future Features
+
+### Phase 1: Core Platform (Current)
+- ✅ NFT Marketplace with fixed-price and auction listings
+- ✅ Service Registry for on-chain payments  
+- ✅ Staking Vault with time-locked rewards
+- ✅ Token Launchpad for SIP-010 deployments
+
+### Phase 2: Enhanced DeFi Integration  
+- 🔄 Cross-chain yield aggregation
+- 📊 Advanced analytics dashboard
+- 🤖 Automated portfolio rebalancing
+- 🌐 Multi-chain expansion support
+
+### Phase 3: Advanced Features
+- 🎯 AI-powered investment recommendations  
+- 📈 Predictive analytics for yield optimization
+- 🔗 Interoperability with major DeFi protocols
+- 🎮 Gamified staking incentives
+
+### Long-term Vision
+- 🌍 Global adoption and localization
+- 📱 Mobile app development
+- 🏛️ Institutional-grade security audits
+- 🌱 Sustainability-focused initiatives
+
