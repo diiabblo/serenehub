@@ -1,12 +1,12 @@
-# StackHub
+# SereneHub
 
-![Frontend CI](https://github.com/stackhub/stackhub/actions/workflows/frontend.yml/badge.svg)
-![Contracts CI](https://github.com/stackhub/stackhub/actions/workflows/contracts.yml/badge.svg)
+![Frontend CI](https://github.com/serenehub/serenehub/actions/workflows/frontend.yml/badge.svg)
+![Contracts CI](https://github.com/serenehub/serenehub/actions/workflows/contracts.yml/badge.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
 ## Overview
 
-StackHub is a comprehensive Stacks-based decentralized application (dApp) designed to empower the Bitcoin economy. It integrates a suite of DeFi and utility services into a single platform.
+SereneHub is a comprehensive Stacks-based decentralized application (dApp) designed to empower the Bitcoin economy. It integrates a suite of DeFi and utility services into a single platform.
 
 ## Key Features
 
@@ -27,8 +27,8 @@ StackHub is a comprehensive Stacks-based decentralized application (dApp) design
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/stackhub/stackhub.git
-   cd stackhub
+   git clone https://github.com/serenehub/serenehub.git
+   cd serenehub
    ```
 
 2. Install Frontend Dependencies:
@@ -45,8 +45,8 @@ StackHub is a comprehensive Stacks-based decentralized application (dApp) design
 ## Project Structure
 
 ```
-stackhub/
-├── stackhub-contracts/    # Smart contracts (Clarinet project)
+serenehub/
+├── serenehub-contracts/    # Smart contracts (Clarinet project)
 │   ├── contracts/         # Clarity source code
 │   └── tests/             # TypeScript unit tests
 ├── frontend/              # Next.js web application

@@ -1,4 +1,4 @@
-;; StackHub Service Registry - Gas Optimized
+;; SereneHub Service Registry - Gas Optimized
 ;; Listing fee: 2.5 STX | Transaction fee: 1.5%
 
 (define-constant CONTRACT-OWNER tx-sender)

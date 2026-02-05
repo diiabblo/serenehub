@@ -1,4 +1,4 @@
-;; StackHub NFT Marketplace - Gas Optimized
+;; SereneHub NFT Marketplace - Gas Optimized
 ;; Platform fee: 1.25% on sales
 
 (define-constant CONTRACT-OWNER tx-sender)
@@ -20,7 +20,7 @@
 ;; @desc Tracks total fees collected by the platform
 (define-data-var total-fees uint u0)
 
-(define-non-fungible-token stackhub-nft uint)
+(define-non-fungible-token serenehub-nft uint)
 
 ;; Data Maps
 ;; @desc Stores URI and creator principal for each NFT
@@ -39,7 +39,7 @@
 
 ;; @desc Get the owner of a token
 (define-read-only (get-owner (id uint))
-  (ok (nft-get-owner? stackhub-nft id)))
+  (ok (nft-get-owner? serenehub-nft id)))
 
 ;; @desc Get listing details for a token
 (define-read-only (get-listing (id uint))
@@ -55,7 +55,7 @@
 ;; @returns (ok uint) - Returns the token ID of the minted NFT.
 (define-public (mint (uri (string-ascii 256)))
   (let ((id (+ (var-get last-token-id) u1)))
-    (try! (nft-mint? stackhub-nft id tx-sender))
+    (try! (nft-mint? serenehub-nft id tx-sender))
     (map-set nft-data id {uri: uri, creator: tx-sender})
     (var-set last-token-id id)
     (ok id)))
@@ -67,7 +67,7 @@
 ;; @returns (ok bool) - Returns true if successful.
 (define-public (list-nft (id uint) (price uint))
   (begin
-    (asserts! (is-eq (some tx-sender) (nft-get-owner? stackhub-nft id)) ERR-UNAUTHORIZED)
+    (asserts! (is-eq (some tx-sender) (nft-get-owner? serenehub-nft id)) ERR-UNAUTHORIZED)
     (asserts! (> price u0) ERR-PRICE)
     (asserts! (is-none (map-get? listings id)) ERR-LISTED)
     (map-set listings id {price: price, seller: tx-sender})
@@ -97,7 +97,7 @@
   )
     (try! (stx-transfer? seller-amount tx-sender seller))
     (try! (stx-transfer? fee tx-sender CONTRACT-OWNER))
-    (try! (nft-transfer? stackhub-nft id seller tx-sender))
+    (try! (nft-transfer? serenehub-nft id seller tx-sender))
     (map-delete listings id)
     (var-set total-fees (+ (var-get total-fees) fee))
     (ok true)))
@@ -109,6 +109,6 @@
 ;; @returns (ok bool) - Returns true if transfer succeeds.
 (define-public (transfer (id uint) (recipient principal))
   (begin
-    (asserts! (is-eq (some tx-sender) (nft-get-owner? stackhub-nft id)) ERR-UNAUTHORIZED)
+    (asserts! (is-eq (some tx-sender) (nft-get-owner? serenehub-nft id)) ERR-UNAUTHORIZED)
     (asserts! (is-none (map-get? listings id)) ERR-LISTED)
-    (nft-transfer? stackhub-nft id tx-sender recipient)))
+    (nft-transfer? serenehub-nft id tx-sender recipient)))

@@ -1,13 +1,13 @@
-# Contributing to StackHub
+# Contributing to SereneHub
 
-We welcome contributions to StackHub! This guide will help you get started.
+We welcome contributions to SereneHub! This guide will help you get started.
 
 ## Development Setup
 
 ### Smart Contracts (Clarinet)
 
 1. Install [Clarinet](https://github.com/hirosystems/clarinet).
-2. Navigate to `stackhub-contracts/`.
+2. Navigate to `serenehub-contracts/`.
 3. Run tests:
    ```bash
    clarinet test

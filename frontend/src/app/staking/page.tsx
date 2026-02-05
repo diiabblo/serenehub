@@ -8,7 +8,7 @@ import { StakingStats, FeeStructure } from "@/components/staking/StakingStats";
 /**
  * Staking Vault Page.
  * Users can stake STX to earn rewards and request unstaking.
- * Interacts with `stackhub-staking-vault`.
+ * Interacts with `serenehub-staking-vault`.
  */
 export default function StakingPage() {
   const { connected } = useWallet();

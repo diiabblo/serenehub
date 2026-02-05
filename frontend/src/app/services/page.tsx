@@ -8,7 +8,7 @@ import { PayServiceForm } from "@/components/services/PayServiceForm";
 /**
  * Service Registry Page.
  * Allows providers to register services and users to pay for them.
- * Interacts with `stackhub-service-registry` contract.
+ * Interacts with `serenehub-service-registry` contract.
  */
 export default function ServicesPage() {
   const { connected } = useWallet();

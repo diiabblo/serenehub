@@ -1,6 +1,6 @@
 # Staking Vault Contract
 
-**Contract Name:** `stackhub-staking-vault`
+**Contract Name:** `serenehub-staking-vault`
 
 ## Constants
 - `LOCK-PERIOD`: 144 blocks (~24 hours)

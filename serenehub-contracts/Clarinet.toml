@@ -1,8 +1,8 @@
 # Main project configuration
 # Defines contracts, dependencies, and settings for the Clarinet runtime.
 [project]
-name = 'stackhub-contracts'
-description = 'DeFi Platform Contracts for StackHub'
+name = 'serenehub-contracts'
+description = 'DeFi Platform Contracts for SereneHub'
 authors = ['AdekunleBamz']
 telemetry = true
 cache_dir = './.cache'
@@ -10,29 +10,29 @@ requirements = []
 
 # Contract: NFT Marketplace
 # Logic for listing, dealing, and minting NFTs.
-[contracts.stackhub-nft-marketplace]
-path = 'contracts/stackhub-nft-marketplace.clar'
+[contracts.serenehub-nft-marketplace]
+path = 'contracts/serenehub-nft-marketplace.clar'
 clarity_version = 4
 epoch = 'latest'
 
 # Contract: Service Registry
 # Logic for service providers to register and receive payments.
-[contracts.stackhub-service-registry]
-path = 'contracts/stackhub-service-registry.clar'
+[contracts.serenehub-service-registry]
+path = 'contracts/serenehub-service-registry.clar'
 clarity_version = 4
 epoch = 'latest'
 
 # Contract: Staking Vault
 # Logic for time-locked stacking and rewards.
-[contracts.stackhub-staking-vault]
-path = 'contracts/stackhub-staking-vault.clar'
+[contracts.serenehub-staking-vault]
+path = 'contracts/serenehub-staking-vault.clar'
 clarity_version = 4
 epoch = 'latest'
 
 # Contract: Token Launchpad
 # Logic for creating new SIP-010 fungible tokens.
-[contracts.stackhub-token-launchpad]
-path = 'contracts/stackhub-token-launchpad.clar'
+[contracts.serenehub-token-launchpad]
+path = 'contracts/serenehub-token-launchpad.clar'
 clarity_version = 4
 epoch = 'latest'
 [repl.analysis]

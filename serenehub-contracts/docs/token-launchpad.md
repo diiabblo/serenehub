@@ -1,6 +1,6 @@
 # Token Launchpad Contract
 
-**Contract Name:** `stackhub-token-launchpad`
+**Contract Name:** `serenehub-token-launchpad`
 
 ## Constants
 - `CREATION-FEE`: 5 STX

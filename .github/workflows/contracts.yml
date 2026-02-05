@@ -4,11 +4,11 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - 'stackhub-contracts/**'
+      - 'serenehub-contracts/**'
   pull_request:
     branches: [ "main" ]
     paths:
-      - 'stackhub-contracts/**'
+      - 'serenehub-contracts/**'
 
 jobs:
   test:
@@ -25,5 +25,5 @@ jobs:
       run: clarinet --version
       
     - name: Run Contract Tests
-      working-directory: ./stackhub-contracts
+      working-directory: ./serenehub-contracts
       run: clarinet test

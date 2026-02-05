@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { Cl } from "@stacks/transactions";
 
 /**
- * Test Suite: StackHub Staking Vault
+ * Test Suite: SereneHub Staking Vault
  * Validates staking logic, unstake requests, and time-lock mechanisms.
  * Checks mathematical accuracy of potential rewards (mocked).
  */
@@ -12,11 +12,11 @@ const deployer = accounts.get("deployer")!;
 const wallet1 = accounts.get("wallet_1")!;
 const wallet2 = accounts.get("wallet_2")!;
 
-describe("StackHub Staking Vault", () => {
+describe("SereneHub Staking Vault", () => {
   describe("stake", () => {
     it("should stake STX successfully", () => {
       const { result } = simnet.callPublicFn(
-        "stackhub-staking-vault",
+        "serenehub-staking-vault",
         "stake",
         [Cl.uint(5000000)],
         wallet1
@@ -26,7 +26,7 @@ describe("StackHub Staking Vault", () => {
 
     it("should fail with zero amount", () => {
       const { result } = simnet.callPublicFn(
-        "stackhub-staking-vault",
+        "serenehub-staking-vault",
         "stake",
         [Cl.uint(0)],
         wallet1
@@ -37,10 +37,10 @@ describe("StackHub Staking Vault", () => {
 
   describe("get-stake", () => {
     it("should return stake info after staking", () => {
-      simnet.callPublicFn("stackhub-staking-vault", "stake", [Cl.uint(5000000)], wallet1);
+      simnet.callPublicFn("serenehub-staking-vault", "stake", [Cl.uint(5000000)], wallet1);
       
       const { result } = simnet.callReadOnlyFn(
-        "stackhub-staking-vault",
+        "serenehub-staking-vault",
         "get-stake",
         [Cl.principal(wallet1)],
         wallet1
@@ -51,7 +51,7 @@ describe("StackHub Staking Vault", () => {
 
     it("should return none for non-staker", () => {
       const { result } = simnet.callReadOnlyFn(
-        "stackhub-staking-vault",
+        "serenehub-staking-vault",
         "get-stake",
         [Cl.principal(wallet2)],
         wallet1
@@ -62,10 +62,10 @@ describe("StackHub Staking Vault", () => {
 
   describe("request-unstake", () => {
     it("should request unstake successfully", () => {
-      simnet.callPublicFn("stackhub-staking-vault", "stake", [Cl.uint(5000000)], wallet1);
+      simnet.callPublicFn("serenehub-staking-vault", "stake", [Cl.uint(5000000)], wallet1);
       
       const { result } = simnet.callPublicFn(
-        "stackhub-staking-vault",
+        "serenehub-staking-vault",
         "request-unstake",
         [Cl.uint(3000000)],
         wallet1
@@ -75,7 +75,7 @@ describe("StackHub Staking Vault", () => {
 
     it("should fail if no stake", () => {
       const { result } = simnet.callPublicFn(
-        "stackhub-staking-vault",
+        "serenehub-staking-vault",
         "request-unstake",
         [Cl.uint(1000000)],
         wallet2
@@ -86,11 +86,11 @@ describe("StackHub Staking Vault", () => {
 
   describe("get-total-staked", () => {
     it("should track total staked", () => {
-      simnet.callPublicFn("stackhub-staking-vault", "stake", [Cl.uint(5000000)], wallet1);
-      simnet.callPublicFn("stackhub-staking-vault", "stake", [Cl.uint(3000000)], wallet2);
+      simnet.callPublicFn("serenehub-staking-vault", "stake", [Cl.uint(5000000)], wallet1);
+      simnet.callPublicFn("serenehub-staking-vault", "stake", [Cl.uint(3000000)], wallet2);
       
       const { result } = simnet.callReadOnlyFn(
-        "stackhub-staking-vault",
+        "serenehub-staking-vault",
         "get-total-staked",
         [],
         wallet1
