@@ -9,9 +9,9 @@ import {
 import { CONTRACTS } from "@/config/contracts";
 
 /**
- * Mint a new NFT on the StackHub marketplace.
+ * Mint a new NFT on the SereneHub marketplace.
  * @param uri - The metadata URI for the NFT.
- * Initiates a contract call to `stackhub-nft-marketplace.mint`.
+ * Initiates a contract call to `serenehub-nft-marketplace.mint`.
  */
 export async function mintNFT(uri: string) {
   const [address, contractName] = CONTRACTS.NFT_MARKETPLACE.split(".");
@@ -32,7 +32,7 @@ export async function mintNFT(uri: string) {
  * List an NFT for sale on the marketplace.
  * @param tokenId - The ID of the NFT to list.
  * @param price - The sale price in micro-STX.
- * Calls `stackhub-nft-marketplace.list-nft`.
+ * Calls `serenehub-nft-marketplace.list-nft`.
  */
 export async function listNFT(tokenId: number, price: number) {
   const [address, contractName] = CONTRACTS.NFT_MARKETPLACE.split(".");
@@ -52,7 +52,7 @@ export async function listNFT(tokenId: number, price: number) {
 /**
  * Purchase an NFT from the marketplace.
  * @param tokenId - The ID of the NFT to buy.
- * Calls `stackhub-nft-marketplace.buy-nft`.
+ * Calls `serenehub-nft-marketplace.buy-nft`.
  */
 export async function buyNFT(tokenId: number) {
   const [address, contractName] = CONTRACTS.NFT_MARKETPLACE.split(".");
@@ -76,7 +76,7 @@ export async function buyNFT(tokenId: number) {
  * @param symbol - The token symbol (3-5 chars).
  * @param decimals - Decimal places (usually 6).
  * @param initialSupply - The initial supply value.
- * Calls `stackhub-token-launchpad.create-token`.
+ * Calls `serenehub-token-launchpad.create-token`.
  */
 export async function createToken(
   name: string,
@@ -107,7 +107,7 @@ export async function createToken(
 /**
  * Stake STX tokens in the vault.
  * @param amount - The amount to stake in micro-STX.
- * Calls `stackhub-staking-vault.stake`.
+ * Calls `serenehub-staking-vault.stake`.
  */
 export async function stakeSTX(amount: number) {
   const [address, contractName] = CONTRACTS.STAKING_VAULT.split(".");
@@ -127,7 +127,7 @@ export async function stakeSTX(amount: number) {
 /**
  * Request to unstake tokens from the vault.
  * @param amount - The amount to unstake in micro-STX.
- * Calls `stackhub-staking-vault.request-unstake`.
+ * Calls `serenehub-staking-vault.request-unstake`.
  */
 export async function requestUnstake(amount: number) {
   const [address, contractName] = CONTRACTS.STAKING_VAULT.split(".");
@@ -149,7 +149,7 @@ export async function requestUnstake(amount: number) {
  * Register a new off-chain service on-chain.
  * @param title - The service title.
  * @param price - The service cost in micro-STX.
- * Calls `stackhub-service-registry.register-service`.
+ * Calls `serenehub-service-registry.register-service`.
  */
 export async function registerService(title: string, price: number) {
   const [address, contractName] = CONTRACTS.SERVICE_REGISTRY.split(".");
@@ -169,7 +169,7 @@ export async function registerService(title: string, price: number) {
 /**
  * Pay for a registered service.
  * @param serviceId - The ID of the service to pay for.
- * Calls `stackhub-service-registry.pay-service`.
+ * Calls `serenehub-service-registry.pay-service`.
  */
 export async function payForService(serviceId: number) {
   const [address, contractName] = CONTRACTS.SERVICE_REGISTRY.split(".");

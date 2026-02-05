@@ -1,5 +1,5 @@
 /**
- * StackHub Constants
+ * SereneHub Constants
  * Centralized configuration values for the platform.
  */
 
@@ -34,10 +34,10 @@ export const DEPLOYER_ADDRESS = 'SP3FKNEZ86RG5RT7SZ5FBRGH85FZNG94ZH1MCGG6N';
 // ============================================
 
 export const CONTRACT_NAMES = {
-  NFT_MARKETPLACE: 'stackhub-nft-marketplace',
-  TOKEN_LAUNCHPAD: 'stackhub-token-launchpad',
-  STAKING_VAULT: 'stackhub-staking-vault',
-  SERVICE_REGISTRY: 'stackhub-service-registry',
+  NFT_MARKETPLACE: 'serenehub-nft-marketplace',
+  TOKEN_LAUNCHPAD: 'serenehub-token-launchpad',
+  STAKING_VAULT: 'serenehub-staking-vault',
+  SERVICE_REGISTRY: 'serenehub-service-registry',
 } as const;
 
 // ============================================

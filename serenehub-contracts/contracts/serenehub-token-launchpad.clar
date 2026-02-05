@@ -1,4 +1,4 @@
-;; StackHub Token Launchpad - Gas Optimized
+;; SereneHub Token Launchpad - Gas Optimized
 ;; Creation fee: 5 STX per token launch
 
 (define-constant CONTRACT-OWNER tx-sender)
@@ -17,7 +17,7 @@
 ;; @desc Tracks total creation fees collected
 (define-data-var total-fees uint u0)
 
-(define-fungible-token stackhub-ft)
+(define-fungible-token serenehub-ft)
 
 ;; @desc Stores metadata and supply info for each token
 (define-map token-info uint {

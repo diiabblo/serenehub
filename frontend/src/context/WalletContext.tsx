@@ -73,7 +73,7 @@ export function WalletProvider({ children }: { children: ReactNode }) {
   const connectStacks = () => {
     showConnect({
       appDetails: {
-        name: "StackHub",
+        name: "SereneHub",
         icon: typeof window !== "undefined" ? window.location.origin + "/logo.png" : "/logo.png",
       },
       onFinish: () => {

@@ -1,8 +1,8 @@
 {
-  "name": "stackhub-frontend",
+  "name": "serenehub-frontend",
   "version": "1.0.0",
-  "description": "Official Frontend for StackHub dApp",
-  "author": "StackHub Team",
+  "description": "Official Frontend for SereneHub dApp",
+  "author": "SereneHub Team",
   "license": "MIT",
   "private": true,
   "scripts": {

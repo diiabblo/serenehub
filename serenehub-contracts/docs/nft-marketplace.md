@@ -1,6 +1,6 @@
 # NFT Marketplace Contract
 
-**Contract Name:** `stackhub-nft-marketplace`
+**Contract Name:** `serenehub-nft-marketplace`
 
 ## Data Structures
 

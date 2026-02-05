@@ -1,4 +1,4 @@
-;; StackHub Staking Vault - Gas Optimized
+;; SereneHub Staking Vault - Gas Optimized
 ;; Withdrawal fee: 0.5% | Early unstake: 2.5%
 ;; Uses direct STX transfers - simpler and cheaper
 
