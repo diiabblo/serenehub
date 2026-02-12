@@ -37,3 +37,20 @@ export function getNetworkConfig(network: NetworkType): NetworkConfig {
       return DEVNET_CONFIG;
   }
 }
+
+export interface ApiEndpoints {
+  transactions: string;
+  accounts: string;
+  contracts: string;
+  blocks: string;
+}
+
+export function getApiEndpoints(network: NetworkType): ApiEndpoints {
+  const baseUrl = getNetworkConfig(network).url;
+  return {
+    transactions: \`\${baseUrl}/extended/v1/tx\`,
+    accounts: \`\${baseUrl}/v2/accounts\`,
+    contracts: \`\${baseUrl}/v2/contracts\`,
+    blocks: \`\${baseUrl}/extended/v1/block\`,
+  };
+}
