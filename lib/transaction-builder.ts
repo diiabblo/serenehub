@@ -91,3 +91,16 @@ export class TransactionBroadcaster {
     return { txid: 'mock-txid', success: true };
   }
 }
+
+export interface ClarityValue {
+  type: string;
+  value: unknown;
+}
+
+export function uint(value: number): ClarityValue {
+  return { type: 'uint', value };
+}
+
+export function principal(value: string): ClarityValue {
+  return { type: 'principal', value };
+}
