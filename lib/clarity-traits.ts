@@ -37,3 +37,9 @@ export interface TraitReference {
 export function formatTraitReference(ref: TraitReference): string {
   return \`\${ref.contractAddress}.\${ref.contractName}.\${ref.traitName}\`;
 }
+
+export interface TraitImplementation {
+  trait: SupportedTrait;
+  contractId: string;
+  verified: boolean;
+}
