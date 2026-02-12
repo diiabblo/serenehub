@@ -12,3 +12,9 @@ export const MAINNET_CONFIG: NetworkConfig = {
   url: 'https://api.mainnet.hiro.so',
   chainId: 1,
 };
+
+export const TESTNET_CONFIG: NetworkConfig = {
+  name: 'testnet',
+  url: 'https://api.testnet.hiro.so',
+  chainId: 2147483648,
+};
