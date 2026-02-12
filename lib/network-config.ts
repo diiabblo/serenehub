@@ -125,3 +125,10 @@ export function getNetworkCapabilities(network: NetworkType): NetworkCapabilitie
     supportsStackingV2: network === 'mainnet',
   };
 }
+
+export const NETWORK_CONSTANTS = {
+  BLOCK_TIME: 600000, // 10 minutes in ms
+  CONFIRMATIONS_REQUIRED: 6,
+  MAX_STRING_LENGTH: 128,
+  MAX_CONTRACT_SIZE: 100000,
+} as const;
