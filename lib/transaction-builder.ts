@@ -49,3 +49,9 @@ export class ContractCallBuilder extends TransactionBuilder {
     return \`\${this.callOptions.contractAddress}.\${this.callOptions.contractName}\`;
   }
 }
+
+export interface PostCondition {
+  type: 'stx' | 'ft' | 'nft';
+  condition: 'eq' | 'gt' | 'gte' | 'lt' | 'lte';
+  amount?: number;
+}
