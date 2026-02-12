@@ -105,3 +105,6 @@ export function parseMetadataURI(uri: string): { protocol: string; path: string 
     path: parts[1] || uri,
   };
 }
+
+export const METADATA_PROTOCOLS = ['https', 'ipfs', 'ar', 'data'] as const;
+export type MetadataProtocol = typeof METADATA_PROTOCOLS[number];
