@@ -24,3 +24,15 @@ export interface DeployContractOptions extends TransactionOptions {
   contractName: string;
   codeBody: string;
 }
+
+export class TransactionBuilder {
+  private options: TransactionOptions;
+  
+  constructor(options: TransactionOptions) {
+    this.options = options;
+  }
+  
+  getNetwork(): string {
+    return this.options.network;
+  }
+}
