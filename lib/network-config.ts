@@ -132,3 +132,23 @@ export const NETWORK_CONSTANTS = {
   MAX_STRING_LENGTH: 128,
   MAX_CONTRACT_SIZE: 100000,
 } as const;
+
+export interface NetworkValidator {
+  isValidUrl(url: string): boolean;
+  canConnect(url: string): Promise<boolean>;
+}
+
+export class BasicNetworkValidator implements NetworkValidator {
+  isValidUrl(url: string): boolean {
+    try {
+      new URL(url);
+      return true;
+    } catch {
+      return false;
+    }
+  }
+  
+  async canConnect(url: string): Promise<boolean> {
+    return this.isValidUrl(url);
+  }
+}
