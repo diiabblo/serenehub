@@ -10,3 +10,8 @@ export interface SIP009Trait extends ClarityTrait {
   name: 'sip009-nft-trait';
   methods: ['get-last-token-id', 'get-token-uri', 'get-owner', 'transfer'];
 }
+
+export interface SIP010Trait extends ClarityTrait {
+  name: 'sip010-ft-trait';
+  methods: ['get-name', 'get-symbol', 'get-decimals', 'get-balance', 'get-total-supply', 'transfer'];
+}
