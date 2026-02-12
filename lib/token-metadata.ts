@@ -142,3 +142,9 @@ export interface MetadataError {
   message: string;
   uri?: string;
 }
+
+export const METADATA_ERRORS = {
+  INVALID_URI: { code: 'ERR_INVALID_URI', message: 'Invalid metadata URI' },
+  FETCH_FAILED: { code: 'ERR_FETCH_FAILED', message: 'Failed to fetch metadata' },
+  INVALID_FORMAT: { code: 'ERR_INVALID_FORMAT', message: 'Invalid metadata format' },
+} as const;
