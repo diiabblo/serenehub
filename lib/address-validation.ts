@@ -76,3 +76,7 @@ export function getPrincipalType(principal: string): PrincipalType | null {
   }
   return { type: 'standard' };
 }
+
+export function formatContractIdentifier(address: string, contractName: string): string {
+  return \`\${address}.\${contractName}\`;
+}
