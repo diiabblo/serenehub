@@ -114,3 +114,20 @@ export function detectNetwork(address: string): 'mainnet' | 'testnet' | null {
   if (isTestnetAddress(address)) return 'testnet';
   return null;
 }
+
+export interface AddressComponents {
+  version: number;
+  hash160: string;
+  network: 'mainnet' | 'testnet';
+}
+
+export function getAddressComponents(address: string): AddressComponents | null {
+  const network = detectNetwork(address);
+  if (!network) return null;
+  
+  return {
+    version: getAddressVersion(network),
+    hash160: address.substring(2),
+    network,
+  };
+}
