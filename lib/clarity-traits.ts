@@ -53,3 +53,9 @@ export class TraitRegistry {
     this.implementations.set(contractId, impls);
   }
 }
+
+export interface TraitMethod {
+  name: string;
+  args: Array<{ name: string; type: string }>;
+  returnType: string;
+}
