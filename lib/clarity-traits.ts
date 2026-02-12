@@ -85,3 +85,13 @@ export interface TraitValidator {
   validate(contractSource: string): Promise<boolean>;
   getImplementedTraits(contractSource: string): Promise<SupportedTrait[]>;
 }
+
+export class BasicTraitValidator implements TraitValidator {
+  async validate(contractSource: string): Promise<boolean> {
+    return contractSource.includes('impl-trait');
+  }
+  
+  async getImplementedTraits(contractSource: string): Promise<SupportedTrait[]> {
+    return [];
+  }
+}
