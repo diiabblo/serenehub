@@ -55,3 +55,16 @@ export interface PostCondition {
   condition: 'eq' | 'gt' | 'gte' | 'lt' | 'lte';
   amount?: number;
 }
+
+export class PostConditionBuilder {
+  private conditions: PostCondition[] = [];
+  
+  addSTXCondition(condition: PostCondition['condition'], amount: number): this {
+    this.conditions.push({ type: 'stx', condition, amount });
+    return this;
+  }
+  
+  build(): PostCondition[] {
+    return this.conditions;
+  }
+}
