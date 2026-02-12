@@ -36,3 +36,16 @@ export class TransactionBuilder {
     return this.options.network;
   }
 }
+
+export class ContractCallBuilder extends TransactionBuilder {
+  private callOptions: ContractCallOptions;
+  
+  constructor(options: ContractCallOptions) {
+    super(options);
+    this.callOptions = options;
+  }
+  
+  getContractId(): string {
+    return \`\${this.callOptions.contractAddress}.\${this.callOptions.contractName}\`;
+  }
+}
