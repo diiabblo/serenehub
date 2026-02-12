@@ -176,3 +176,15 @@ export const ANCHOR_MODES = {
   OFF_CHAIN_ONLY: { mode: 'offChainOnly' as const },
   ANY: { mode: 'any' as const },
 };
+
+export default {
+  TransactionBuilder,
+  ContractCallBuilder,
+  PostConditionBuilder,
+  TransactionBroadcaster,
+  BatchTransactionBuilder,
+  uint,
+  principal,
+  stringAscii,
+  validateTransactionOptions,
+};
