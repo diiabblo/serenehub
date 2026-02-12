@@ -33,3 +33,7 @@ export interface TraitReference {
   contractName: string;
   traitName: string;
 }
+
+export function formatTraitReference(ref: TraitReference): string {
+  return \`\${ref.contractAddress}.\${ref.contractName}.\${ref.traitName}\`;
+}
