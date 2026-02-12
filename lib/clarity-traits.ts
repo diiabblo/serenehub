@@ -69,3 +69,14 @@ export const SIP010_METHODS: TraitMethod[] = [
   { name: 'get-name', args: [], returnType: '(response (string-ascii 32) uint)' },
   { name: 'get-symbol', args: [], returnType: '(response (string-ascii 10) uint)' },
 ];
+
+export function getTraitMethods(trait: SupportedTrait): TraitMethod[] {
+  switch (trait) {
+    case 'sip009-nft-trait':
+      return SIP009_METHODS;
+    case 'sip010-ft-trait':
+      return SIP010_METHODS;
+    default:
+      return [];
+  }
+}
