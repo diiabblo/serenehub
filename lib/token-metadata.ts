@@ -6,3 +6,9 @@ export interface TokenMetadata {
   description?: string;
   image?: string;
 }
+
+export interface NFTMetadata extends TokenMetadata {
+  tokenId: number;
+  attributes?: Array<{ trait_type: string; value: string | number }>;
+  external_url?: string;
+}
