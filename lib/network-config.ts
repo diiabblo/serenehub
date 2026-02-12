@@ -18,3 +18,9 @@ export const TESTNET_CONFIG: NetworkConfig = {
   url: 'https://api.testnet.hiro.so',
   chainId: 2147483648,
 };
+
+export const DEVNET_CONFIG: NetworkConfig = {
+  name: 'devnet',
+  url: 'http://localhost:3999',
+  chainId: 2147483648,
+};
