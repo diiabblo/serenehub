@@ -106,3 +106,7 @@ export const TRAIT_ERRORS = {
   INVALID_TRAIT: { code: 'ERR_INVALID_TRAIT', message: 'Invalid trait specified' },
   NOT_IMPLEMENTED: { code: 'ERR_NOT_IMPLEMENTED', message: 'Trait not implemented' },
 } as const;
+
+export function createTraitError(errorType: keyof typeof TRAIT_ERRORS, trait?: SupportedTrait): TraitError {
+  return { ...TRAIT_ERRORS[errorType], trait };
+}
