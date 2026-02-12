@@ -213,3 +213,25 @@ export function isMainnet(network: NetworkType): boolean {
 export function isTestnet(network: NetworkType): boolean {
   return network === 'testnet';
 }
+
+export interface NetworkCache {
+  set(key: string, value: unknown, ttl?: number): void;
+  get(key: string): unknown | null;
+  clear(): void;
+}
+
+export class InMemoryNetworkCache implements NetworkCache {
+  private cache = new Map<string, unknown>();
+  
+  set(key: string, value: unknown): void {
+    this.cache.set(key, value);
+  }
+  
+  get(key: string): unknown | null {
+    return this.cache.get(key) || null;
+  }
+  
+  clear(): void {
+    this.cache.clear();
+  }
+}
