@@ -135,3 +135,16 @@ export interface TransactionStatus {
 export async function getTransactionStatus(txid: string): Promise<TransactionStatus> {
   return { txid, status: 'pending' };
 }
+
+export class BatchTransactionBuilder {
+  private transactions: TransactionOptions[] = [];
+  
+  add(tx: TransactionOptions): this {
+    this.transactions.push(tx);
+    return this;
+  }
+  
+  getCount(): number {
+    return this.transactions.length;
+  }
+}
