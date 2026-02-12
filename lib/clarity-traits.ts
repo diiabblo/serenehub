@@ -23,3 +23,7 @@ export interface SIP013Trait extends ClarityTrait {
 
 export const SUPPORTED_TRAITS = ['sip009-nft-trait', 'sip010-ft-trait', 'sip013-semi-fungible-token-trait'] as const;
 export type SupportedTrait = typeof SUPPORTED_TRAITS[number];
+
+export function isValidTrait(trait: string): trait is SupportedTrait {
+  return SUPPORTED_TRAITS.includes(trait as SupportedTrait);
+}
