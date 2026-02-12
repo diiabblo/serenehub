@@ -159,3 +159,10 @@ export const TX_ERRORS = {
   INSUFFICIENT_FUNDS: { code: 'ERR_INSUFFICIENT_FUNDS', message: 'Insufficient funds' },
   INVALID_NONCE: { code: 'ERR_INVALID_NONCE', message: 'Invalid nonce' },
 } as const;
+
+export function validateTransactionOptions(options: TransactionOptions): boolean {
+  if (!options.network) return false;
+  if (options.fee && options.fee < 0) return false;
+  if (options.nonce && options.nonce < 0) return false;
+  return true;
+}
