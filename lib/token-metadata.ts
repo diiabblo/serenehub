@@ -18,3 +18,9 @@ export interface FTMetadata extends TokenMetadata {
   decimals: number;
   totalSupply?: string;
 }
+
+export interface SFTMetadata extends TokenMetadata {
+  tokenId: number;
+  decimals?: number;
+  supply?: string;
+}
