@@ -24,3 +24,16 @@ export const DEVNET_CONFIG: NetworkConfig = {
   url: 'http://localhost:3999',
   chainId: 2147483648,
 };
+
+export type NetworkType = 'mainnet' | 'testnet' | 'devnet';
+
+export function getNetworkConfig(network: NetworkType): NetworkConfig {
+  switch (network) {
+    case 'mainnet':
+      return MAINNET_CONFIG;
+    case 'testnet':
+      return TESTNET_CONFIG;
+    case 'devnet':
+      return DEVNET_CONFIG;
+  }
+}
