@@ -7,3 +7,5 @@ export interface SIP013Token {
 }
 
 export const SIP013_FEATURE_2 = 'feature_2';
+
+export const SIP013_FEATURE_3 = 'feature_3';
