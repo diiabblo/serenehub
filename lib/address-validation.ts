@@ -185,3 +185,16 @@ export function isBurnAddress(address: string): boolean {
   const burnAddresses = ['SP000000000000000000002Q6VF78', 'ST000000000000000000002AMW42H'];
   return burnAddresses.includes(address);
 }
+
+export default {
+  validateStacksAddress,
+  validateContractIdentifier,
+  validatePrincipal,
+  AddressValidator,
+  parseContractIdentifier,
+  formatContractIdentifier,
+  normalizeAddress,
+  detectNetwork,
+  compareAddresses,
+  getAddressInfo,
+};
