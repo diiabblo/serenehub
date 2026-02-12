@@ -258,3 +258,17 @@ export const NETWORK_ERRORS = {
   INVALID_NETWORK: { code: 'ERR_INVALID_NETWORK', message: 'Invalid network specified' },
   TIMEOUT: { code: 'ERR_TIMEOUT', message: 'Network request timeout' },
 } as const;
+
+export default {
+  MAINNET_CONFIG,
+  TESTNET_CONFIG,
+  DEVNET_CONFIG,
+  getNetworkConfig,
+  getApiEndpoints,
+  getNetworkFees,
+  getNetworkCapabilities,
+  NetworkManager,
+  NetworkMonitor,
+  CustomNetwork,
+  BasicNetworkValidator,
+};
