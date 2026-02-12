@@ -74,3 +74,17 @@ export class NetworkMonitor {
     return status;
   }
 }
+
+export interface NetworkFees {
+  low: number;
+  medium: number;
+  high: number;
+}
+
+export async function getNetworkFees(network: NetworkType): Promise<NetworkFees> {
+  return {
+    low: 1000,
+    medium: 2000,
+    high: 5000,
+  };
+}
