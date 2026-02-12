@@ -54,3 +54,23 @@ export function getApiEndpoints(network: NetworkType): ApiEndpoints {
     blocks: \`\${baseUrl}/extended/v1/block\`,
   };
 }
+
+export interface NetworkStatus {
+  online: boolean;
+  blockHeight?: number;
+  lastChecked: Date;
+}
+
+export class NetworkMonitor {
+  private status: Map<NetworkType, NetworkStatus> = new Map();
+  
+  async checkNetwork(network: NetworkType): Promise<NetworkStatus> {
+    const status: NetworkStatus = {
+      online: true,
+      blockHeight: 0,
+      lastChecked: new Date(),
+    };
+    this.status.set(network, status);
+    return status;
+  }
+}
