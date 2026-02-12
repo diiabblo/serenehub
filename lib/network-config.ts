@@ -168,3 +168,23 @@ export class NetworkManager {
     return getNetworkConfig(this.currentNetwork);
   }
 }
+
+export interface NetworkEvent {
+  type: 'connected' | 'disconnected' | 'switched';
+  network: NetworkType;
+  timestamp: Date;
+}
+
+export type NetworkEventListener = (event: NetworkEvent) => void;
+
+export class NetworkEventEmitter {
+  private listeners: NetworkEventListener[] = [];
+  
+  on(listener: NetworkEventListener): void {
+    this.listeners.push(listener);
+  }
+  
+  emit(event: NetworkEvent): void {
+    this.listeners.forEach(listener => listener(event));
+  }
+}
