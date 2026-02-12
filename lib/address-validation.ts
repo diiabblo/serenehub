@@ -64,3 +64,15 @@ export function validateContractIdentifier(contractId: string, network: 'mainnet
   
   return { valid: true };
 }
+
+export interface PrincipalType {
+  type: 'standard' | 'contract';
+  network?: 'mainnet' | 'testnet';
+}
+
+export function getPrincipalType(principal: string): PrincipalType | null {
+  if (principal.includes('.')) {
+    return { type: 'contract' };
+  }
+  return { type: 'standard' };
+}
