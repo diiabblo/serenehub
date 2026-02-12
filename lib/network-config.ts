@@ -246,3 +246,15 @@ export const RATE_LIMITS: Record<NetworkType, RateLimitConfig> = {
   testnet: { requestsPerMinute: 100, burstSize: 20 },
   devnet: { requestsPerMinute: 1000, burstSize: 100 },
 };
+
+export interface NetworkError {
+  code: string;
+  message: string;
+  network?: NetworkType;
+}
+
+export const NETWORK_ERRORS = {
+  CONNECTION_FAILED: { code: 'ERR_CONNECTION_FAILED', message: 'Failed to connect to network' },
+  INVALID_NETWORK: { code: 'ERR_INVALID_NETWORK', message: 'Invalid network specified' },
+  TIMEOUT: { code: 'ERR_TIMEOUT', message: 'Network request timeout' },
+} as const;
