@@ -43,3 +43,13 @@ export interface TraitImplementation {
   contractId: string;
   verified: boolean;
 }
+
+export class TraitRegistry {
+  private implementations: Map<string, TraitImplementation[]> = new Map();
+  
+  register(contractId: string, trait: SupportedTrait, verified = false): void {
+    const impls = this.implementations.get(contractId) || [];
+    impls.push({ trait, contractId, verified });
+    this.implementations.set(contractId, impls);
+  }
+}
