@@ -118,3 +118,21 @@ export interface MetadataAttribute {
   value: string | number;
   display_type?: 'number' | 'boost_number' | 'boost_percentage' | 'date';
 }
+
+export class MetadataBuilder {
+  private metadata: Partial<NFTMetadata> = {};
+  
+  setName(name: string): this {
+    this.metadata.name = name;
+    return this;
+  }
+  
+  setDescription(description: string): this {
+    this.metadata.description = description;
+    return this;
+  }
+  
+  build(): NFTMetadata {
+    return this.metadata as NFTMetadata;
+  }
+}
