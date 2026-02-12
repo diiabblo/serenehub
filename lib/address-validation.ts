@@ -138,3 +138,17 @@ export const ADDRESS_ERRORS = {
   INVALID_C32: 'Invalid C32 encoding',
   NETWORK_MISMATCH: 'Address network does not match expected network',
 } as const;
+
+export function validatePrincipal(principal: string, network: 'mainnet' | 'testnet'): AddressValidationResult {
+  const type = getPrincipalType(principal);
+  
+  if (!type) {
+    return { valid: false, error: 'Invalid principal format' };
+  }
+  
+  if (type.type === 'contract') {
+    return validateContractIdentifier(principal, network);
+  }
+  
+  return validateStacksAddress(principal, network);
+}
