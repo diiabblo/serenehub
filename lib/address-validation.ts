@@ -131,3 +131,10 @@ export function getAddressComponents(address: string): AddressComponents | null 
     network,
   };
 }
+
+export const ADDRESS_ERRORS = {
+  EMPTY_ADDRESS: 'Address cannot be empty',
+  INVALID_FORMAT: 'Invalid address format',
+  INVALID_C32: 'Invalid C32 encoding',
+  NETWORK_MISMATCH: 'Address network does not match expected network',
+} as const;
