@@ -148,3 +148,12 @@ export const METADATA_ERRORS = {
   FETCH_FAILED: { code: 'ERR_FETCH_FAILED', message: 'Failed to fetch metadata' },
   INVALID_FORMAT: { code: 'ERR_INVALID_FORMAT', message: 'Invalid metadata format' },
 } as const;
+
+export default {
+  MetadataFetcher,
+  BasicMetadataValidator,
+  InMemoryMetadataStorage,
+  MetadataBuilder,
+  parseMetadataURI,
+  isValidMetadataProtocol,
+};
