@@ -125,3 +125,13 @@ export interface TransactionEstimate {
 export async function estimateTransaction(options: TransactionOptions): Promise<TransactionEstimate> {
   return { estimatedFee: 1000, estimatedTime: 600 };
 }
+
+export interface TransactionStatus {
+  txid: string;
+  status: 'pending' | 'success' | 'failed';
+  blockHeight?: number;
+}
+
+export async function getTransactionStatus(txid: string): Promise<TransactionStatus> {
+  return { txid, status: 'pending' };
+}
