@@ -45,3 +45,22 @@ export function isValidContractName(name: string): boolean {
   const contractNameRegex = /^[a-zA-Z]([a-zA-Z0-9]|[-_])*$/;
   return contractNameRegex.test(name) && name.length <= 128;
 }
+
+export function validateContractIdentifier(contractId: string, network: 'mainnet' | 'testnet'): AddressValidationResult {
+  const parsed = parseContractIdentifier(contractId);
+  
+  if (!parsed) {
+    return { valid: false, error: 'Invalid contract identifier format' };
+  }
+  
+  const addressValidation = validateStacksAddress(parsed.address, network);
+  if (!addressValidation.valid) {
+    return addressValidation;
+  }
+  
+  if (!isValidContractName(parsed.contractName)) {
+    return { valid: false, error: 'Invalid contract name' };
+  }
+  
+  return { valid: true };
+}
