@@ -68,3 +68,8 @@ export class PostConditionBuilder {
     return this.conditions;
   }
 }
+
+export interface TransactionSigner {
+  sign(transaction: unknown): Promise<string>;
+  getPublicKey(): string;
+}
