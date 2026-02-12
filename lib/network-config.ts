@@ -235,3 +235,14 @@ export class InMemoryNetworkCache implements NetworkCache {
     this.cache.clear();
   }
 }
+
+export interface RateLimitConfig {
+  requestsPerMinute: number;
+  burstSize: number;
+}
+
+export const RATE_LIMITS: Record<NetworkType, RateLimitConfig> = {
+  mainnet: { requestsPerMinute: 50, burstSize: 10 },
+  testnet: { requestsPerMinute: 100, burstSize: 20 },
+  devnet: { requestsPerMinute: 1000, burstSize: 100 },
+};
