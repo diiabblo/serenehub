@@ -188,3 +188,18 @@ export class NetworkEventEmitter {
     this.listeners.forEach(listener => listener(event));
   }
 }
+
+export interface BroadcastConfig {
+  url: string;
+  retries: number;
+  timeout: number;
+}
+
+export function getBroadcastConfig(network: NetworkType): BroadcastConfig {
+  const config = getNetworkConfig(network);
+  return {
+    url: \`\${config.url}/v2/transactions\`,
+    retries: 3,
+    timeout: 30000,
+  };
+}
