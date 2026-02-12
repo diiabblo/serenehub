@@ -40,3 +40,8 @@ export function parseContractIdentifier(contractId: string): ContractIdentifier 
   if (parts.length !== 2) return null;
   return { address: parts[0], contractName: parts[1] };
 }
+
+export function isValidContractName(name: string): boolean {
+  const contractNameRegex = /^[a-zA-Z]([a-zA-Z0-9]|[-_])*$/;
+  return contractNameRegex.test(name) && name.length <= 128;
+}
