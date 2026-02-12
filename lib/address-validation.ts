@@ -152,3 +152,7 @@ export function validatePrincipal(principal: string, network: 'mainnet' | 'testn
   
   return validateStacksAddress(principal, network);
 }
+
+export function compareAddresses(addr1: string, addr2: string): boolean {
+  return normalizeAddress(addr1) === normalizeAddress(addr2);
+}
