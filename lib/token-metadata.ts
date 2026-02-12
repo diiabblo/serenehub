@@ -56,3 +56,17 @@ export interface MetadataValidator {
   validateNFT(metadata: unknown): metadata is NFTMetadata;
   validateFT(metadata: unknown): metadata is FTMetadata;
 }
+
+export class BasicMetadataValidator implements MetadataValidator {
+  validate(metadata: unknown): metadata is AnyTokenMetadata {
+    return typeof metadata === 'object' && metadata !== null && 'name' in metadata;
+  }
+  
+  validateNFT(metadata: unknown): metadata is NFTMetadata {
+    return this.validate(metadata) && 'tokenId' in (metadata as object);
+  }
+  
+  validateFT(metadata: unknown): metadata is FTMetadata {
+    return this.validate(metadata) && 'symbol' in (metadata as object);
+  }
+}
