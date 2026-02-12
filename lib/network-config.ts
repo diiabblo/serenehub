@@ -6,3 +6,9 @@ export interface NetworkConfig {
   url: string;
   chainId: number;
 }
+
+export const MAINNET_CONFIG: NetworkConfig = {
+  name: 'mainnet',
+  url: 'https://api.mainnet.hiro.so',
+  chainId: 1,
+};
