@@ -64,3 +64,8 @@ export const SIP009_METHODS: TraitMethod[] = [
   { name: 'get-last-token-id', args: [], returnType: '(response uint uint)' },
   { name: 'get-token-uri', args: [{ name: 'token-id', type: 'uint' }], returnType: '(response (optional (string-ascii 256)) uint)' },
 ];
+
+export const SIP010_METHODS: TraitMethod[] = [
+  { name: 'get-name', args: [], returnType: '(response (string-ascii 32) uint)' },
+  { name: 'get-symbol', args: [], returnType: '(response (string-ascii 10) uint)' },
+];
