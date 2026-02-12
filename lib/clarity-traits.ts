@@ -20,3 +20,6 @@ export interface SIP013Trait extends ClarityTrait {
   name: 'sip013-semi-fungible-token-trait';
   methods: ['get-balance', 'get-overall-balance', 'get-total-supply', 'transfer'];
 }
+
+export const SUPPORTED_TRAITS = ['sip009-nft-trait', 'sip010-ft-trait', 'sip013-semi-fungible-token-trait'] as const;
+export type SupportedTrait = typeof SUPPORTED_TRAITS[number];
