@@ -203,3 +203,13 @@ export function getBroadcastConfig(network: NetworkType): BroadcastConfig {
     timeout: 30000,
   };
 }
+
+export const DEFAULT_NETWORK: NetworkType = 'mainnet';
+
+export function isMainnet(network: NetworkType): boolean {
+  return network === 'mainnet';
+}
+
+export function isTestnet(network: NetworkType): boolean {
+  return network === 'testnet';
+}
