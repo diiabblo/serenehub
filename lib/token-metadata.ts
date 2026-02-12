@@ -76,3 +76,19 @@ export interface MetadataStorage {
   retrieve(key: string): Promise<AnyTokenMetadata | null>;
   delete(key: string): Promise<void>;
 }
+
+export class InMemoryMetadataStorage implements MetadataStorage {
+  private storage = new Map<string, AnyTokenMetadata>();
+  
+  async store(key: string, metadata: AnyTokenMetadata): Promise<void> {
+    this.storage.set(key, metadata);
+  }
+  
+  async retrieve(key: string): Promise<AnyTokenMetadata | null> {
+    return this.storage.get(key) || null;
+  }
+  
+  async delete(key: string): Promise<void> {
+    this.storage.delete(key);
+  }
+}
