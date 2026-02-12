@@ -109,3 +109,19 @@ export class CustomNetwork implements CustomNetworkConfig {
     this.timeout = config.timeout;
   }
 }
+
+export interface NetworkCapabilities {
+  supportsNFTs: boolean;
+  supportsSIP009: boolean;
+  supportsSIP010: boolean;
+  supportsStackingV2: boolean;
+}
+
+export function getNetworkCapabilities(network: NetworkType): NetworkCapabilities {
+  return {
+    supportsNFTs: true,
+    supportsSIP009: true,
+    supportsSIP010: true,
+    supportsStackingV2: network === 'mainnet',
+  };
+}
