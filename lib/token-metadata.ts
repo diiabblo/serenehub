@@ -12,3 +12,9 @@ export interface NFTMetadata extends TokenMetadata {
   attributes?: Array<{ trait_type: string; value: string | number }>;
   external_url?: string;
 }
+
+export interface FTMetadata extends TokenMetadata {
+  symbol: string;
+  decimals: number;
+  totalSupply?: string;
+}
