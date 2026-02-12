@@ -73,3 +73,9 @@ export interface TransactionSigner {
   sign(transaction: unknown): Promise<string>;
   getPublicKey(): string;
 }
+
+export interface BroadcastResult {
+  txid: string;
+  success: boolean;
+  error?: string;
+}
