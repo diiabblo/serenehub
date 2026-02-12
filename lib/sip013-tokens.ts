@@ -35,3 +35,5 @@ export const SIP013_FEATURE_14 = 'feature_14';
 export const SIP013_FEATURE_15 = 'feature_15';
 
 export const SIP013_FEATURE_16 = 'feature_16';
+
+export const SIP013_FEATURE_17 = 'feature_17';
