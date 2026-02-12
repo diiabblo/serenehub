@@ -80,3 +80,19 @@ export function getPrincipalType(principal: string): PrincipalType | null {
 export function formatContractIdentifier(address: string, contractName: string): string {
   return \`\${address}.\${contractName}\`;
 }
+
+export class AddressValidator {
+  private network: 'mainnet' | 'testnet';
+  
+  constructor(network: 'mainnet' | 'testnet') {
+    this.network = network;
+  }
+  
+  validate(address: string): AddressValidationResult {
+    return validateStacksAddress(address, this.network);
+  }
+  
+  validateContract(contractId: string): AddressValidationResult {
+    return validateContractIdentifier(contractId, this.network);
+  }
+}
