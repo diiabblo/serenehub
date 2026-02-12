@@ -27,3 +27,9 @@ export type SupportedTrait = typeof SUPPORTED_TRAITS[number];
 export function isValidTrait(trait: string): trait is SupportedTrait {
   return SUPPORTED_TRAITS.includes(trait as SupportedTrait);
 }
+
+export interface TraitReference {
+  contractAddress: string;
+  contractName: string;
+  traitName: string;
+}
