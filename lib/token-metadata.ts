@@ -70,3 +70,9 @@ export class BasicMetadataValidator implements MetadataValidator {
     return this.validate(metadata) && 'symbol' in (metadata as object);
   }
 }
+
+export interface MetadataStorage {
+  store(key: string, metadata: AnyTokenMetadata): Promise<void>;
+  retrieve(key: string): Promise<AnyTokenMetadata | null>;
+  delete(key: string): Promise<void>;
+}
