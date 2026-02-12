@@ -148,3 +148,14 @@ export class BatchTransactionBuilder {
     return this.transactions.length;
   }
 }
+
+export interface TransactionError {
+  code: string;
+  message: string;
+  txid?: string;
+}
+
+export const TX_ERRORS = {
+  INSUFFICIENT_FUNDS: { code: 'ERR_INSUFFICIENT_FUNDS', message: 'Insufficient funds' },
+  INVALID_NONCE: { code: 'ERR_INVALID_NONCE', message: 'Invalid nonce' },
+} as const;
