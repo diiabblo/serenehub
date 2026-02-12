@@ -29,3 +29,14 @@ export function validateStacksAddress(address: string, network: 'mainnet' | 'tes
   
   return { valid: true };
 }
+
+export interface ContractIdentifier {
+  address: string;
+  contractName: string;
+}
+
+export function parseContractIdentifier(contractId: string): ContractIdentifier | null {
+  const parts = contractId.split('.');
+  if (parts.length !== 2) return null;
+  return { address: parts[0], contractName: parts[1] };
+}
