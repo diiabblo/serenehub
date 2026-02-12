@@ -116,3 +116,12 @@ export function stringAscii(value: string): ClarityValue {
 export function stringUtf8(value: string): ClarityValue {
   return { type: 'string-utf8', value };
 }
+
+export interface TransactionEstimate {
+  estimatedFee: number;
+  estimatedTime: number;
+}
+
+export async function estimateTransaction(options: TransactionOptions): Promise<TransactionEstimate> {
+  return { estimatedFee: 1000, estimatedTime: 600 };
+}
