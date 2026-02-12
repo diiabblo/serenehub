@@ -152,3 +152,19 @@ export class BasicNetworkValidator implements NetworkValidator {
     return this.isValidUrl(url);
   }
 }
+
+export class NetworkManager {
+  private currentNetwork: NetworkType = 'mainnet';
+  
+  setNetwork(network: NetworkType): void {
+    this.currentNetwork = network;
+  }
+  
+  getCurrentNetwork(): NetworkType {
+    return this.currentNetwork;
+  }
+  
+  getConfig(): NetworkConfig {
+    return getNetworkConfig(this.currentNetwork);
+  }
+}
