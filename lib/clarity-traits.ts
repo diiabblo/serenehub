@@ -59,3 +59,8 @@ export interface TraitMethod {
   args: Array<{ name: string; type: string }>;
   returnType: string;
 }
+
+export const SIP009_METHODS: TraitMethod[] = [
+  { name: 'get-last-token-id', args: [], returnType: '(response uint uint)' },
+  { name: 'get-token-uri', args: [{ name: 'token-id', type: 'uint' }], returnType: '(response (optional (string-ascii 256)) uint)' },
+];
