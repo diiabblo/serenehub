@@ -19,3 +19,8 @@ export interface TransferOptions extends TransactionOptions {
   amount: number;
   memo?: string;
 }
+
+export interface DeployContractOptions extends TransactionOptions {
+  contractName: string;
+  codeBody: string;
+}
