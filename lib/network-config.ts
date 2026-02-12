@@ -88,3 +88,24 @@ export async function getNetworkFees(network: NetworkType): Promise<NetworkFees>
     high: 5000,
   };
 }
+
+export interface CustomNetworkConfig extends NetworkConfig {
+  customHeaders?: Record<string, string>;
+  timeout?: number;
+}
+
+export class CustomNetwork implements CustomNetworkConfig {
+  name: string;
+  url: string;
+  chainId: number;
+  customHeaders?: Record<string, string>;
+  timeout?: number;
+  
+  constructor(config: CustomNetworkConfig) {
+    this.name = config.name;
+    this.url = config.url;
+    this.chainId = config.chainId;
+    this.customHeaders = config.customHeaders;
+    this.timeout = config.timeout;
+  }
+}
