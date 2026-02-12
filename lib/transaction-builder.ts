@@ -13,3 +13,9 @@ export interface ContractCallOptions extends TransactionOptions {
   functionName: string;
   functionArgs: unknown[];
 }
+
+export interface TransferOptions extends TransactionOptions {
+  recipient: string;
+  amount: number;
+  memo?: string;
+}
