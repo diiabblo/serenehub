@@ -104,3 +104,15 @@ export function uint(value: number): ClarityValue {
 export function principal(value: string): ClarityValue {
   return { type: 'principal', value };
 }
+
+export function buffer(value: Uint8Array): ClarityValue {
+  return { type: 'buffer', value };
+}
+
+export function stringAscii(value: string): ClarityValue {
+  return { type: 'string-ascii', value };
+}
+
+export function stringUtf8(value: string): ClarityValue {
+  return { type: 'string-utf8', value };
+}
