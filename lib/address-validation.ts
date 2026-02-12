@@ -96,3 +96,7 @@ export class AddressValidator {
     return validateContractIdentifier(contractId, this.network);
   }
 }
+
+export function normalizeAddress(address: string): string {
+  return address.toUpperCase().replace(/[^0123456789ABCDEFGHJKMNPQRSTVWXYZ]/g, '');
+}
