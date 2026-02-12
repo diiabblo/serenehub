@@ -79,3 +79,15 @@ export interface BroadcastResult {
   success: boolean;
   error?: string;
 }
+
+export class TransactionBroadcaster {
+  private network: string;
+  
+  constructor(network: 'mainnet' | 'testnet') {
+    this.network = network;
+  }
+  
+  async broadcast(signedTx: string): Promise<BroadcastResult> {
+    return { txid: 'mock-txid', success: true };
+  }
+}
