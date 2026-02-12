@@ -95,3 +95,9 @@ export class BasicTraitValidator implements TraitValidator {
     return [];
   }
 }
+
+export interface TraitError {
+  code: string;
+  message: string;
+  trait?: SupportedTrait;
+}
