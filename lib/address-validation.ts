@@ -108,3 +108,9 @@ export function isMainnetAddress(address: string): boolean {
 export function isTestnetAddress(address: string): boolean {
   return address.startsWith('ST') || address.startsWith('SN');
 }
+
+export function detectNetwork(address: string): 'mainnet' | 'testnet' | null {
+  if (isMainnetAddress(address)) return 'mainnet';
+  if (isTestnetAddress(address)) return 'testnet';
+  return null;
+}
