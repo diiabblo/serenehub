@@ -6,3 +6,10 @@ export interface TransactionOptions {
   fee?: number;
   nonce?: number;
 }
+
+export interface ContractCallOptions extends TransactionOptions {
+  contractAddress: string;
+  contractName: string;
+  functionName: string;
+  functionArgs: unknown[];
+}
