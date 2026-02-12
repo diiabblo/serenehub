@@ -17,3 +17,15 @@ export function isValidC32Address(address: string): boolean {
   const c32Regex = /^[0123456789ABCDEFGHJKMNPQRSTVWXYZ]+$/;
   return c32Regex.test(address);
 }
+
+export function validateStacksAddress(address: string, network: 'mainnet' | 'testnet'): AddressValidationResult {
+  if (!address || address.length === 0) {
+    return { valid: false, error: 'Address cannot be empty' };
+  }
+  
+  if (!isValidC32Address(address)) {
+    return { valid: false, error: 'Invalid C32 address format' };
+  }
+  
+  return { valid: true };
+}
