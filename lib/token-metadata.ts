@@ -50,3 +50,9 @@ export class MetadataFetcher {
     return data;
   }
 }
+
+export interface MetadataValidator {
+  validate(metadata: unknown): metadata is AnyTokenMetadata;
+  validateNFT(metadata: unknown): metadata is NFTMetadata;
+  validateFT(metadata: unknown): metadata is FTMetadata;
+}
