@@ -36,3 +36,17 @@ export interface MetadataURI {
   mutable: boolean;
   cached?: boolean;
 }
+
+export class MetadataFetcher {
+  private cache: Map<string, AnyTokenMetadata> = new Map();
+  
+  async fetch(uri: string): Promise<AnyTokenMetadata> {
+    if (this.cache.has(uri)) {
+      return this.cache.get(uri)!;
+    }
+    const response = await fetch(uri);
+    const data = await response.json();
+    this.cache.set(uri, data);
+    return data;
+  }
+}
