@@ -136,3 +136,9 @@ export class MetadataBuilder {
     return this.metadata as NFTMetadata;
   }
 }
+
+export interface MetadataError {
+  code: string;
+  message: string;
+  uri?: string;
+}
