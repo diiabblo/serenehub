@@ -101,3 +101,8 @@ export interface TraitError {
   message: string;
   trait?: SupportedTrait;
 }
+
+export const TRAIT_ERRORS = {
+  INVALID_TRAIT: { code: 'ERR_INVALID_TRAIT', message: 'Invalid trait specified' },
+  NOT_IMPLEMENTED: { code: 'ERR_NOT_IMPLEMENTED', message: 'Trait not implemented' },
+} as const;
