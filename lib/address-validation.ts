@@ -156,3 +156,27 @@ export function validatePrincipal(principal: string, network: 'mainnet' | 'testn
 export function compareAddresses(addr1: string, addr2: string): boolean {
   return normalizeAddress(addr1) === normalizeAddress(addr2);
 }
+
+export interface AddressInfo {
+  address: string;
+  network: 'mainnet' | 'testnet';
+  type: 'standard' | 'contract';
+  contractName?: string;
+}
+
+export function getAddressInfo(principal: string): AddressInfo | null {
+  const network = detectNetwork(principal);
+  if (!network) return null;
+  
+  const type = getPrincipalType(principal);
+  if (!type) return null;
+  
+  const parsed = parseContractIdentifier(principal);
+  
+  return {
+    address: parsed ? parsed.address : principal,
+    network,
+    type: type.type,
+    contractName: parsed?.contractName,
+  };
+}
