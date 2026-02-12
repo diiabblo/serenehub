@@ -112,3 +112,9 @@ export type MetadataProtocol = typeof METADATA_PROTOCOLS[number];
 export function isValidMetadataProtocol(protocol: string): protocol is MetadataProtocol {
   return METADATA_PROTOCOLS.includes(protocol as MetadataProtocol);
 }
+
+export interface MetadataAttribute {
+  trait_type: string;
+  value: string | number;
+  display_type?: 'number' | 'boost_number' | 'boost_percentage' | 'date';
+}
