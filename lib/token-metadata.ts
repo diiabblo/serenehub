@@ -97,3 +97,11 @@ export interface MetadataFormat {
   format: 'json' | 'xml' | 'custom';
   schema?: string;
 }
+
+export function parseMetadataURI(uri: string): { protocol: string; path: string } {
+  const parts = uri.split('://');
+  return {
+    protocol: parts[0] || 'https',
+    path: parts[1] || uri,
+  };
+}
