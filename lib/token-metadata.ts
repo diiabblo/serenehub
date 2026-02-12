@@ -24,3 +24,9 @@ export interface SFTMetadata extends TokenMetadata {
   decimals?: number;
   supply?: string;
 }
+
+export type AnyTokenMetadata = NFTMetadata | FTMetadata | SFTMetadata;
+
+export function isNFTMetadata(metadata: AnyTokenMetadata): metadata is NFTMetadata {
+  return 'tokenId' in metadata && 'attributes' in metadata;
+}
