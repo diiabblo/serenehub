@@ -92,3 +92,8 @@ export class InMemoryMetadataStorage implements MetadataStorage {
     this.storage.delete(key);
   }
 }
+
+export interface MetadataFormat {
+  format: 'json' | 'xml' | 'custom';
+  schema?: string;
+}
