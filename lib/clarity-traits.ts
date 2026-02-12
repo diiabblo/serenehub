@@ -110,3 +110,12 @@ export const TRAIT_ERRORS = {
 export function createTraitError(errorType: keyof typeof TRAIT_ERRORS, trait?: SupportedTrait): TraitError {
   return { ...TRAIT_ERRORS[errorType], trait };
 }
+
+export default {
+  SUPPORTED_TRAITS,
+  isValidTrait,
+  formatTraitReference,
+  TraitRegistry,
+  getTraitMethods,
+  createTraitError,
+};
