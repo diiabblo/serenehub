@@ -80,3 +80,8 @@ export function getTraitMethods(trait: SupportedTrait): TraitMethod[] {
       return [];
   }
 }
+
+export interface TraitValidator {
+  validate(contractSource: string): Promise<boolean>;
+  getImplementedTraits(contractSource: string): Promise<SupportedTrait[]>;
+}
