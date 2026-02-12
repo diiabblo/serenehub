@@ -30,3 +30,9 @@ export type AnyTokenMetadata = NFTMetadata | FTMetadata | SFTMetadata;
 export function isNFTMetadata(metadata: AnyTokenMetadata): metadata is NFTMetadata {
   return 'tokenId' in metadata && 'attributes' in metadata;
 }
+
+export interface MetadataURI {
+  uri: string;
+  mutable: boolean;
+  cached?: boolean;
+}
