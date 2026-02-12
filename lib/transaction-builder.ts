@@ -166,3 +166,13 @@ export function validateTransactionOptions(options: TransactionOptions): boolean
   if (options.nonce && options.nonce < 0) return false;
   return true;
 }
+
+export interface AnchorMode {
+  mode: 'onChainOnly' | 'offChainOnly' | 'any';
+}
+
+export const ANCHOR_MODES = {
+  ON_CHAIN_ONLY: { mode: 'onChainOnly' as const },
+  OFF_CHAIN_ONLY: { mode: 'offChainOnly' as const },
+  ANY: { mode: 'any' as const },
+};
