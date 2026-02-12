@@ -100,3 +100,11 @@ export class AddressValidator {
 export function normalizeAddress(address: string): string {
   return address.toUpperCase().replace(/[^0123456789ABCDEFGHJKMNPQRSTVWXYZ]/g, '');
 }
+
+export function isMainnetAddress(address: string): boolean {
+  return address.startsWith('SP') || address.startsWith('SM');
+}
+
+export function isTestnetAddress(address: string): boolean {
+  return address.startsWith('ST') || address.startsWith('SN');
+}
