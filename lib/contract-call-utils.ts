@@ -71,3 +71,9 @@ export class ReadOnlyCaller {
     return { success: true, value: null };
   }
 }
+
+export interface CallOptions {
+  fee?: number;
+  nonce?: number;
+  postConditions?: unknown[];
+}
