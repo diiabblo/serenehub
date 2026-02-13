@@ -30,3 +30,7 @@ export class SbtcWithdrawer {
     return { requestId: 'mock-id', success: true };
   }
 }
+
+export function validateBtcAddress(address: string): boolean {
+  return address.startsWith('bc1') || address.startsWith('1') || address.startsWith('3');
+}
