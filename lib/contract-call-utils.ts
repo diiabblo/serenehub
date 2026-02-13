@@ -59,3 +59,9 @@ export function parseContractId(contractId: string): { address: string; name: st
 export function formatContractId(address: string, name: string): string {
   return \`\${address}.\${name}\`;
 }
+
+export interface ReadOnlyCall {
+  contractId: string;
+  functionName: string;
+  args: unknown[];
+}
