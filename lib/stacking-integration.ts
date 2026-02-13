@@ -55,3 +55,9 @@ export function getMinimumStackAmount(network: string): bigint {
 export function getMaximumLockPeriod(): number {
   return 12;
 }
+
+export interface StackingStatus {
+  active: boolean;
+  currentCycle: number;
+  stackedAmount: bigint;
+}
