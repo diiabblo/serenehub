@@ -84,3 +84,8 @@ export function validateContractCall(call: ContractCall): boolean {
   if (!call.functionName) return false;
   return true;
 }
+
+export interface BatchCall {
+  calls: ContractCall[];
+  options?: CallOptions;
+}
