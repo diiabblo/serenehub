@@ -38,3 +38,8 @@ export function validateBtcAddress(address: string): boolean {
 export function validateWithdrawalAmount(amount: bigint): boolean {
   return amount > 0n;
 }
+
+export interface WithdrawalFee {
+  amount: bigint;
+  percent: number;
+}
