@@ -94,3 +94,7 @@ export interface RewardAddress {
   hashbytes: string;
   version: number;
 }
+
+export function createRewardAddress(poxAddress: string): RewardAddress {
+  return { hashbytes: poxAddress, version: 1 };
+}
