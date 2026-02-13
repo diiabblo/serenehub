@@ -51,3 +51,7 @@ export function calculateRewards(amount: bigint, cycles: number, rewardRate: num
 export function getMinimumStackAmount(network: string): bigint {
   return network === 'mainnet' ? 100000000n : 1000000n;
 }
+
+export function getMaximumLockPeriod(): number {
+  return 12;
+}
