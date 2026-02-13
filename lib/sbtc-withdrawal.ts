@@ -120,3 +120,12 @@ export interface WithdrawalProgress {
 export async function getWithdrawalProgress(requestId: string): Promise<WithdrawalProgress> {
   return { status: 'pending', confirmations: 0, requiredConfirmations: 6 };
 }
+
+export default {
+  SbtcWithdrawer,
+  WithdrawalHistoryManager,
+  calculateWithdrawalFee,
+  calculateNetAmount,
+  validateWithdrawalLimits,
+  validateBtcAddress,
+};
