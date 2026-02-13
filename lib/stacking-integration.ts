@@ -98,3 +98,9 @@ export interface RewardAddress {
 export function createRewardAddress(poxAddress: string): RewardAddress {
   return { hashbytes: poxAddress, version: 1 };
 }
+
+export const STACKING_ERRORS = {
+  INSUFFICIENT_STX: 'Insufficient STX balance',
+  BELOW_MINIMUM: 'Below minimum stacking amount',
+  INVALID_LOCK_PERIOD: 'Invalid lock period',
+} as const;
