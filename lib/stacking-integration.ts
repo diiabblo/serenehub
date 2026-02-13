@@ -89,3 +89,8 @@ export function validateStackRequest(request: StackRequest): boolean {
 export function getCycleDuration(): number {
   return 2100;
 }
+
+export interface RewardAddress {
+  hashbytes: string;
+  version: number;
+}
