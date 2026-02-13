@@ -49,3 +49,9 @@ export function createContractCall(
     functionArgs: args,
   };
 }
+
+export function parseContractId(contractId: string): { address: string; name: string } | null {
+  const parts = contractId.split('.');
+  if (parts.length !== 2) return null;
+  return { address: parts[0], name: parts[1] };
+}
