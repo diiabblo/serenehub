@@ -93,3 +93,13 @@ export interface WithdrawalConfirmation {
   fee: bigint;
   netAmount: bigint;
 }
+
+export function createConfirmation(request: WithdrawalRequest, fee: bigint): WithdrawalConfirmation {
+  return {
+    requestId: 'mock-id',
+    amount: request.amount,
+    btcAddress: request.btcAddress,
+    fee,
+    netAmount: request.amount - fee,
+  };
+}
