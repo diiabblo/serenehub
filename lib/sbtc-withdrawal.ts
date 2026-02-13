@@ -103,3 +103,10 @@ export function createConfirmation(request: WithdrawalRequest, fee: bigint): Wit
     netAmount: request.amount - fee,
   };
 }
+
+export const WITHDRAWAL_ERRORS = {
+  INVALID_BTC_ADDRESS: 'Invalid Bitcoin address',
+  AMOUNT_TOO_LOW: 'Amount below minimum',
+  AMOUNT_TOO_HIGH: 'Amount above maximum',
+  INSUFFICIENT_BALANCE: 'Insufficient sBTC balance',
+} as const;
