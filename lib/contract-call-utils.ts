@@ -35,3 +35,17 @@ export interface ContractInterface {
   name: string;
   functions: FunctionParameter[];
 }
+
+export function createContractCall(
+  address: string,
+  contract: string,
+  functionName: string,
+  args: unknown[]
+): ContractCall {
+  return {
+    contractAddress: address,
+    contractName: contract,
+    functionName,
+    functionArgs: args,
+  };
+}
