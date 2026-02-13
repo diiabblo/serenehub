@@ -72,3 +72,9 @@ export class WithdrawalHistoryManager {
     return this.history;
   }
 }
+
+export interface WithdrawalRequestOptions {
+  fee?: number;
+  nonce?: number;
+  memo?: string;
+}
