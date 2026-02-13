@@ -52,3 +52,11 @@ export function calculateWithdrawalFee(amount: bigint, feePercent: number): With
 export function calculateNetAmount(grossAmount: bigint, feePercent: number): bigint {
   return grossAmount - calculateWithdrawalFee(grossAmount, feePercent).amount;
 }
+
+export interface WithdrawalHistory {
+  requestId: string;
+  amount: bigint;
+  btcAddress: string;
+  timestamp: Date;
+  status: string;
+}
