@@ -34,3 +34,7 @@ export class SbtcWithdrawer {
 export function validateBtcAddress(address: string): boolean {
   return address.startsWith('bc1') || address.startsWith('1') || address.startsWith('3');
 }
+
+export function validateWithdrawalAmount(amount: bigint): boolean {
+  return amount > 0n;
+}
