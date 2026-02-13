@@ -25,3 +25,8 @@ export class ContractCaller {
     return { success: true, value: null };
   }
 }
+
+export interface FunctionParameter {
+  name: string;
+  type: string;
+}
