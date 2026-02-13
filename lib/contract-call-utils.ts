@@ -30,3 +30,8 @@ export interface FunctionParameter {
   name: string;
   type: string;
 }
+
+export interface ContractInterface {
+  name: string;
+  functions: FunctionParameter[];
+}
