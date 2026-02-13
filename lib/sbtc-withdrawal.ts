@@ -6,3 +6,9 @@ export interface WithdrawalRequest {
   btcAddress: string;
   stxAddress: string;
 }
+
+export interface WithdrawalStatus {
+  requestId: string;
+  status: 'pending' | 'processing' | 'completed' | 'failed';
+  btcTxid?: string;
+}
