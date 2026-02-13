@@ -110,3 +110,9 @@ export class BasicCallAnalyzer implements CallAnalyzer {
     return true;
   }
 }
+
+export const CALL_ERRORS = {
+  CONTRACT_NOT_FOUND: 'Contract not found',
+  FUNCTION_NOT_FOUND: 'Function not found',
+  INVALID_ARGS: 'Invalid arguments',
+} as const;
