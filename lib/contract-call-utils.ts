@@ -116,3 +116,7 @@ export const CALL_ERRORS = {
   FUNCTION_NOT_FOUND: 'Function not found',
   INVALID_ARGS: 'Invalid arguments',
 } as const;
+
+export function getCallSummary(call: ContractCall): string {
+  return \`\${call.contractAddress}.\${call.contractName}::\${call.functionName}\`;
+}
