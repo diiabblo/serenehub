@@ -110,3 +110,9 @@ export const WITHDRAWAL_ERRORS = {
   AMOUNT_TOO_HIGH: 'Amount above maximum',
   INSUFFICIENT_BALANCE: 'Insufficient sBTC balance',
 } as const;
+
+export interface WithdrawalProgress {
+  status: WithdrawalStatus['status'];
+  confirmations: number;
+  requiredConfirmations: number;
+}
