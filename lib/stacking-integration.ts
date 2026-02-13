@@ -47,3 +47,7 @@ export interface DelegateStackRequest {
 export function calculateRewards(amount: bigint, cycles: number, rewardRate: number): bigint {
   return (amount * BigInt(cycles) * BigInt(rewardRate)) / 100n;
 }
+
+export function getMinimumStackAmount(network: string): bigint {
+  return network === 'mainnet' ? 100000000n : 1000000n;
+}
