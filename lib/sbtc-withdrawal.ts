@@ -85,3 +85,11 @@ export const MAXIMUM_WITHDRAWAL = 100000000n;
 export function validateWithdrawalLimits(amount: bigint): boolean {
   return amount >= MINIMUM_WITHDRAWAL && amount <= MAXIMUM_WITHDRAWAL;
 }
+
+export interface WithdrawalConfirmation {
+  requestId: string;
+  amount: bigint;
+  btcAddress: string;
+  fee: bigint;
+  netAmount: bigint;
+}
