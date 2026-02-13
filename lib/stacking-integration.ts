@@ -37,3 +37,9 @@ export interface StackRequest {
   lockPeriod: number;
   poxAddress: string;
 }
+
+export interface DelegateStackRequest {
+  stacker: string;
+  amount: bigint;
+  lockPeriod: number;
+}
