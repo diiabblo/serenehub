@@ -85,3 +85,7 @@ export function validateStackRequest(request: StackRequest): boolean {
   if (request.lockPeriod < 1 || request.lockPeriod > 12) return false;
   return true;
 }
+
+export function getCycleDuration(): number {
+  return 2100;
+}
