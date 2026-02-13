@@ -110,3 +110,7 @@ export interface StackingStats {
   totalStackers: number;
   rewardCycle: number;
 }
+
+export async function getStackingStats(network: string): Promise<StackingStats> {
+  return { totalStaked: 0n, totalStackers: 0, rewardCycle: 0 };
+}
