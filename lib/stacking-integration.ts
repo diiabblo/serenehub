@@ -104,3 +104,9 @@ export const STACKING_ERRORS = {
   BELOW_MINIMUM: 'Below minimum stacking amount',
   INVALID_LOCK_PERIOD: 'Invalid lock period',
 } as const;
+
+export interface StackingStats {
+  totalStaked: bigint;
+  totalStackers: number;
+  rewardCycle: number;
+}
