@@ -13,3 +13,9 @@ export interface StackingCycle {
   startHeight: number;
   endHeight: number;
 }
+
+export interface PoolInfo {
+  poolAddress: string;
+  poolName: string;
+  rewardsAddress: string;
+}
