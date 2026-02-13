@@ -43,3 +43,7 @@ export interface DelegateStackRequest {
   amount: bigint;
   lockPeriod: number;
 }
+
+export function calculateRewards(amount: bigint, cycles: number, rewardRate: number): bigint {
+  return (amount * BigInt(cycles) * BigInt(rewardRate)) / 100n;
+}
