@@ -18,3 +18,15 @@ export interface WithdrawalRequestResult {
   success: boolean;
   error?: string;
 }
+
+export class SbtcWithdrawer {
+  private sbtcContract: string;
+  
+  constructor(sbtcContract: string) {
+    this.sbtcContract = sbtcContract;
+  }
+  
+  async request(withdrawal: WithdrawalRequest): Promise<WithdrawalRequestResult> {
+    return { requestId: 'mock-id', success: true };
+  }
+}
