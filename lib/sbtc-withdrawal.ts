@@ -43,3 +43,8 @@ export interface WithdrawalFee {
   amount: bigint;
   percent: number;
 }
+
+export function calculateWithdrawalFee(amount: bigint, feePercent: number): WithdrawalFee {
+  const fee = (amount * BigInt(feePercent)) / 100n;
+  return { amount: fee, percent: feePercent };
+}
