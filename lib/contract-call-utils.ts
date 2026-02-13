@@ -77,3 +77,10 @@ export interface CallOptions {
   nonce?: number;
   postConditions?: unknown[];
 }
+
+export function validateContractCall(call: ContractCall): boolean {
+  if (!call.contractAddress) return false;
+  if (!call.contractName) return false;
+  if (!call.functionName) return false;
+  return true;
+}
