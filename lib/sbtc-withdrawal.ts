@@ -116,3 +116,7 @@ export interface WithdrawalProgress {
   confirmations: number;
   requiredConfirmations: number;
 }
+
+export async function getWithdrawalProgress(requestId: string): Promise<WithdrawalProgress> {
+  return { status: 'pending', confirmations: 0, requiredConfirmations: 6 };
+}
