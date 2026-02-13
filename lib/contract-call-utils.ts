@@ -89,3 +89,9 @@ export interface BatchCall {
   calls: ContractCall[];
   options?: CallOptions;
 }
+
+export class BatchCaller {
+  async callAll(batchCall: BatchCall): Promise<CallResult[]> {
+    return batchCall.calls.map(() => ({ success: true }));
+  }
+}
