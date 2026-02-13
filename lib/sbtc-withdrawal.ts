@@ -12,3 +12,9 @@ export interface WithdrawalStatus {
   status: 'pending' | 'processing' | 'completed' | 'failed';
   btcTxid?: string;
 }
+
+export interface WithdrawalRequestResult {
+  requestId: string;
+  success: boolean;
+  error?: string;
+}
