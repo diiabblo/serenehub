@@ -7,3 +7,9 @@ export interface StackingInfo {
   lockPeriod: number;
   unlockHeight: number;
 }
+
+export interface StackingCycle {
+  cycleNumber: number;
+  startHeight: number;
+  endHeight: number;
+}
