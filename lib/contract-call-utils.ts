@@ -120,3 +120,11 @@ export const CALL_ERRORS = {
 export function getCallSummary(call: ContractCall): string {
   return \`\${call.contractAddress}.\${call.contractName}::\${call.functionName}\`;
 }
+
+export interface ContractCallBuilder {
+  setAddress(address: string): this;
+  setContract(name: string): this;
+  setFunction(name: string): this;
+  setArgs(args: unknown[]): this;
+  build(): ContractCall;
+}
