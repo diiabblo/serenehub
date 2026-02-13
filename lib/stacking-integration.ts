@@ -61,3 +61,15 @@ export interface StackingStatus {
   currentCycle: number;
   stackedAmount: bigint;
 }
+
+export class StackingManager {
+  private address: string;
+  
+  constructor(address: string) {
+    this.address = address;
+  }
+  
+  async getStatus(): Promise<StackingStatus> {
+    return { active: false, currentCycle: 0, stackedAmount: 0n };
+  }
+}
