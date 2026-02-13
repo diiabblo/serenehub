@@ -60,3 +60,15 @@ export interface WithdrawalHistory {
   timestamp: Date;
   status: string;
 }
+
+export class WithdrawalHistoryManager {
+  private history: WithdrawalHistory[] = [];
+  
+  add(entry: WithdrawalHistory): void {
+    this.history.push(entry);
+  }
+  
+  getAll(): WithdrawalHistory[] {
+    return this.history;
+  }
+}
