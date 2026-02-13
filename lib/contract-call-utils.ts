@@ -95,3 +95,8 @@ export class BatchCaller {
     return batchCall.calls.map(() => ({ success: true }));
   }
 }
+
+export interface CallAnalyzer {
+  estimateFee(call: ContractCall): number;
+  validateArgs(call: ContractCall): boolean;
+}
