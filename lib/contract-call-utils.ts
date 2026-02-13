@@ -128,3 +128,12 @@ export interface ContractCallBuilder {
   setArgs(args: unknown[]): this;
   build(): ContractCall;
 }
+
+export default {
+  ContractCaller,
+  ReadOnlyCaller,
+  BatchCaller,
+  createContractCall,
+  parseContractId,
+  validateContractCall,
+};
