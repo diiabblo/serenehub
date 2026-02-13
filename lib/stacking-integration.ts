@@ -31,3 +31,9 @@ export class StackingClient {
     return null;
   }
 }
+
+export interface StackRequest {
+  amount: bigint;
+  lockPeriod: number;
+  poxAddress: string;
+}
