@@ -73,3 +73,9 @@ export class StackingManager {
     return { active: false, currentCycle: 0, stackedAmount: 0n };
   }
 }
+
+export interface DelegationInfo {
+  delegate: string;
+  stacker: string;
+  amount: bigint;
+}
