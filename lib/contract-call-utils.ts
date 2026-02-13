@@ -100,3 +100,13 @@ export interface CallAnalyzer {
   estimateFee(call: ContractCall): number;
   validateArgs(call: ContractCall): boolean;
 }
+
+export class BasicCallAnalyzer implements CallAnalyzer {
+  estimateFee(call: ContractCall): number {
+    return 1000;
+  }
+  
+  validateArgs(call: ContractCall): boolean {
+    return true;
+  }
+}
