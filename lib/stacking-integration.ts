@@ -114,3 +114,12 @@ export interface StackingStats {
 export async function getStackingStats(network: string): Promise<StackingStats> {
   return { totalStaked: 0n, totalStackers: 0, rewardCycle: 0 };
 }
+
+export default {
+  StackingClient,
+  StackingManager,
+  StackRequest,
+  calculateRewards,
+  validateStackRequest,
+  getMinimumStackAmount,
+};
