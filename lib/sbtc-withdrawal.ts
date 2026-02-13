@@ -78,3 +78,6 @@ export interface WithdrawalRequestOptions {
   nonce?: number;
   memo?: string;
 }
+
+export const MINIMUM_WITHDRAWAL = 10000n;
+export const MAXIMUM_WITHDRAWAL = 100000000n;
