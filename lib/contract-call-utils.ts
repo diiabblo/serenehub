@@ -13,3 +13,15 @@ export interface CallResult {
   value?: unknown;
   error?: string;
 }
+
+export class ContractCaller {
+  private network: string;
+  
+  constructor(network: string) {
+    this.network = network;
+  }
+  
+  async call(contractCall: ContractCall): Promise<CallResult> {
+    return { success: true, value: null };
+  }
+}
