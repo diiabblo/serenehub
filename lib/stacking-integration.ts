@@ -19,3 +19,15 @@ export interface PoolInfo {
   poolName: string;
   rewardsAddress: string;
 }
+
+export class StackingClient {
+  private network: string;
+  
+  constructor(network: string) {
+    this.network = network;
+  }
+  
+  async getStackingInfo(address: string): Promise<StackingInfo | null> {
+    return null;
+  }
+}
