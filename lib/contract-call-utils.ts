@@ -65,3 +65,9 @@ export interface ReadOnlyCall {
   functionName: string;
   args: unknown[];
 }
+
+export class ReadOnlyCaller {
+  async call(readOnlyCall: ReadOnlyCall): Promise<CallResult> {
+    return { success: true, value: null };
+  }
+}
