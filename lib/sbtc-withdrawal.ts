@@ -81,3 +81,7 @@ export interface WithdrawalRequestOptions {
 
 export const MINIMUM_WITHDRAWAL = 10000n;
 export const MAXIMUM_WITHDRAWAL = 100000000n;
+
+export function validateWithdrawalLimits(amount: bigint): boolean {
+  return amount >= MINIMUM_WITHDRAWAL && amount <= MAXIMUM_WITHDRAWAL;
+}
