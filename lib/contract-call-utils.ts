@@ -7,3 +7,9 @@ export interface ContractCall {
   functionName: string;
   functionArgs: unknown[];
 }
+
+export interface CallResult {
+  success: boolean;
+  value?: unknown;
+  error?: string;
+}
